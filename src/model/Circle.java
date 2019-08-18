@@ -1,7 +1,15 @@
-package model;
+    package model;
 
-public class Circle {
+    public class Circle {
 
-public double radius ;
+    public double radius ;
 
-}
+
+        public double getArea() {
+
+            double area = 3.14*radius*radius ;
+
+            return area;
+
+        }
+    }
