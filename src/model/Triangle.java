@@ -1,6 +1,11 @@
 package model;
 
+import java.util.logging.Logger;
+
 public class Triangle extends AbstractShape {
+
+    private static Logger logger = Logger.getLogger(Triangle.class.getName());
+
 
 
     private double base;
@@ -26,10 +31,14 @@ public class Triangle extends AbstractShape {
 
 }
 
-    @org.jetbrains.annotations.Contract(pure = true)
-    public Triangle(double base, double he) {
+    public Triangle( double base, double height) {
         this.base = base;
-        this.height = heig
+        this.height = height;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 0;
     }
 
     public Triangle() {
@@ -38,5 +47,9 @@ public class Triangle extends AbstractShape {
     @Override
     double getArea() {
         return (base * height)/2;
+    }
+
+    public void getInfo() {
+      logger.info( msg: "triangle with base:" + base + "");
     }
 }

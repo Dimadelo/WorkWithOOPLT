@@ -1,16 +1,48 @@
 package info.sjd;
 
-import model.Circle;
-import model.Square;
-import model.Triangle;
+import model.*;
 
 import java.sql.SQLOutput;
+import java.util.concurrent.Callable;
+import java.util.logging.Logger;
 
 public class ApplicationRunner {
 
-    static String name = "ApplicationRunner class";
+    private static Logger logger = Logger.getLogger(ApplicationRunner.class.getName());
+
 
     public static void main(String[] args) {
+
+        Square square1 = new Square(side:65);
+        Square square2 = new Square(side:75);
+        Square square3 = new Square(side:85);
+        Square square4 = new Square(side:95);
+        Square square5 = new Square(side:105);
+        Circle circle = new Circle(radius:8 );
+        Triangle triangle = new Triangle( base:15, height:10);
+
+        Shape[] shapes = new Shape[7];
+
+        shapes[0] = square1;
+        shapes[1] = square3;
+        shapes[2] = square3;
+        shapes[3] = square4;
+        shapes[4] = square5;
+        shapes[5] = circle;
+        shapes[6] = triangle;
+
+        Shape maxShape = shapes[0];
+
+       for (int i = 0; i < shapes.length; i++) {
+           if (maxShape.getArea() < shapes[i].getArea()){
+               maxShape = shapes[i];
+           }
+
+        logger.info("Max shape has area" + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
+    }
+
+
+
 
 //       Circle circle = new Circle();
 //       circle.radius = 15.0;
@@ -34,15 +66,6 @@ public class ApplicationRunner {
 
 
     }
-
-
-
-
-
-
-
-
-
 
 
 }
