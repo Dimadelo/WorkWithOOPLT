@@ -13,13 +13,13 @@ public class ApplicationRunner {
 
     public static void main(String[] args) {
 
-        Square square1 = new Square(side:65);
-        Square square2 = new Square(side:75);
-        Square square3 = new Square(side:85);
-        Square square4 = new Square(side:95);
-        Square square5 = new Square(side:105);
-        Circle circle = new Circle(radius:8 );
-        Triangle triangle = new Triangle( base:15, height:10);
+        Square square1 = new Square(65);
+        Square square2 = new Square(75);
+        Square square3 = new Square(85);
+        Square square4 = new Square(95);
+        Square square5 = new Square(105);
+        Circle circle = new Circle(8);
+        Triangle triangle = new Triangle(15, 10);
 
         Shape[] shapes = new Shape[7];
 
@@ -33,15 +33,44 @@ public class ApplicationRunner {
 
         Shape maxShape = shapes[0];
 
-       for (int i = 0; i < shapes.length; i++) {
-           if (maxShape.getArea() < shapes[i].getArea()){
-               maxShape = shapes[i];
-           }
+        for (int i = 0; i < shapes.length; i++) {
+            if (maxShape.getArea() < shapes[i].getArea()) {
+                maxShape = shapes[i];
+            }
+
+
+        }
+        logger.info("Max shape has area" + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
+
+        maxShape = shapes[0];
+
+        for (Shape shape : shapes) {
+            if (maxShape.getArea() < shape.getArea()) {
+                maxShape = shape;
+            }
+
+        }
 
         logger.info("Max shape has area" + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
-    }
 
-
+//        maxShape = shapes[0];
+//        int i = 0;
+//        while (i < shapes.length) {
+//            if (maxShape.getArea() < shape.getArea()) {
+//                maxShape = shapes[i];
+//            }
+//            i++;
+//        }
+//
+//
+//        maxShape = shapes[0];
+//        i = 0;
+//            do {
+//                if (maxShape.getArea() < shape.getArea()) {
+//                    maxShape = shapes[i];
+//                }
+//                i++;
+//            } while (i < shapes.length) {
 
 
 //       Circle circle = new Circle();
@@ -63,9 +92,8 @@ public class ApplicationRunner {
 //                + triangle.height + " and triangle has area " + triangle.getArea()  );
 
 
+        }
 
 
     }
 
-
-}

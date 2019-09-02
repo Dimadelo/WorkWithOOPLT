@@ -1,7 +1,5 @@
 package model;
 
-import java.awt.*;
-
 public abstract class AbstractShape implements Shape {
 
     private String className = "Abstract shape";
@@ -12,7 +10,7 @@ public abstract class AbstractShape implements Shape {
         super();
     }
 
-    abstract double getArea () ;
+    public abstract double getArea() ;
 
 
 

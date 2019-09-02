@@ -16,11 +16,16 @@ public class Square extends  AbstractShape implements Shape{
         this.side = side;
     }
 
+    @Override
+    public double getPerimeter() {
+        return 0;
+    }
+
     public Square() {
     }
 
     @Override
-    double getArea() {
+    public double getArea() {
         return side*side;
     }
 }
@@ -29,4 +34,4 @@ public class Square extends  AbstractShape implements Shape{
 
 
 
-}
+

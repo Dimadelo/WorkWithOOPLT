@@ -6,10 +6,7 @@ public class Triangle extends AbstractShape {
 
     private static Logger logger = Logger.getLogger(Triangle.class.getName());
 
-
-
     private double base;
-
 
     private double height;
 
@@ -29,8 +26,6 @@ public class Triangle extends AbstractShape {
         this.height = height;
     }
 
-}
-
     public Triangle( double base, double height) {
         this.base = base;
         this.height = height;
@@ -45,11 +40,11 @@ public class Triangle extends AbstractShape {
     }
 
     @Override
-    double getArea() {
+    public double getArea() {
         return (base * height)/2;
     }
 
     public void getInfo() {
-      logger.info( msg: "triangle with base:" + base + "");
+      logger.info("Triangle with base:" + base + " , height:" + height);
     }
 }
